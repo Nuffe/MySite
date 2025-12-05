@@ -9,7 +9,7 @@ Thoughts:
 - connect with Tailscale
 - some kind of database, some SQL https://www.amazingcto.com/postgres-for-everything/ 
 - Lets try and follow all the steps, design decisions (architecure, model it, and the like...)
-- What language?
+- What language? HTML/CSS/Javascript for the front end, Think ill choose Python over Node
 - Docker
 - Connect the other APIs i use on docker to the site
 -   
