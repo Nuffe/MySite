@@ -13,3 +13,7 @@ Thoughts:
 - Docker
 - Connect the other APIs i use on docker to the site
 -   
+
+- Look into sessions,
+    - login, permissions kept for session 
+    - Cookie save session
