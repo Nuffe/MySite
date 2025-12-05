@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="site" content="width=device-width, initial-scale=1.0">
     <title>Site Face</title>
-    <link rel="stylesheet" href="siteStyle.css">
 
-    <script src="siteFunction.js" defer></script>
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='siteStyle.css') }}">
+    <script src="{{ url_for('static', filename='siteFunction.js') }}"></script>
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'siteFunction.js') }}" ></script>
 </head>
 <body>
     <header>
@@ -15,6 +15,7 @@
     </header>
     <main>
         <p>A simple paragraph</p>
+        <input type = "button" onclick = "HelloFunction()" value = "hello there" />
     </main>
     <footer>
         <p>&copy; 2025 Me</p>
