@@ -1,5 +1,8 @@
 from flask import Flask, redirect, url_for, render_template
+from config import Config
+
 app = Flask(__name__)
+app.config.from_object(Config)
 
 # Localhost:5000
 
@@ -9,6 +12,7 @@ def index():
     user = {"username": "Carl",
             "age": "32"
             }
+    
     posts = [
         {
             'author': {'username': 'John'},
@@ -19,6 +23,7 @@ def index():
             'body': 'The Avengers movie was so cool!'
         }
         ]
+    
     return render_template("siteFace.html", title="Home", user=user, posts=posts)
 
 
