@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <header> Wellcome {{user.username}}</header>
     <p>And your age seam to be {{user.age}}</p>
     <input type = "button" onclick = "HelloFunction()" value = "hello there" />
 
