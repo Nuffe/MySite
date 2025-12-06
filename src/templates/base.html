@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="site" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='siteStyle.css') }}">
+        <script src="{{ url_for('static', filename='siteFunction.js') }}"></script>
+        <script type = "text/javascript" src = "{{ url_for('static', filename = 'siteFunction.js') }}" ></script>
+
+
+        {% if title %}
+        <title>{{ title }} - Base template tutorial</title>
+        {% else %}
+        <title>Welcome to tutorial with no preset title</title>
+         {% endif %}
+    </head>
+
+    <body>
+        <div>Tutorial: <a href="/">Home</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+    <footer>
+        <p>&copy; 2025 Me</p>
+    </footer>
+</body>
+</html>

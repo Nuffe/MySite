@@ -1,26 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="site" content="width=device-width, initial-scale=1.0">
-    <title>Site Face</title>
+{% extends "base.html" %}
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='siteStyle.css') }}">
-    <script src="{{ url_for('static', filename='siteFunction.js') }}"></script>
-    <script type = "text/javascript" src = "{{ url_for('static', filename = 'siteFunction.js') }}" ></script>
-</head>
-<body>
-    <header>
-        <h1>Welcome to a Site</h1>
-    </header>
-    <main>
-        <p>A simple paragraph</p>
-        <input type = "button" onclick = "HelloFunction()" value = "hello there" />
-    </main>
-    <footer>
-        <p>&copy; 2025 Me</p>
-    </footer>
+{% block content %}
+    <p>And your age seam to be {{user.age}}</p>
+    <input type = "button" onclick = "HelloFunction()" value = "hello there" />
 
-</body>
+    {% for post in posts %}
+    <div> <p> {{post.author.username}} says: <br> <b>{{post.body}}</b> </p></div>
+    {% endfor %}
+{% endblock %}
 
-</html>
