@@ -1,5 +1,8 @@
 from flask import Flask, redirect, url_for, render_template
 from config import Config
+from forms import LoginForm
+
+
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -25,6 +28,13 @@ def index():
         ]
     
     return render_template("siteFace.html", title="Home", user=user, posts=posts)
+
+
+@app.route("/login")
+def login():
+    form = LoginForm()
+    return render_template("login.html", title="log in", form=form)
+
 
 
 if __name__=='__main__':
