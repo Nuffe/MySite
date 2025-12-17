@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, render_template
+from flask import Flask, redirect, url_for, render_template, flash
 from config import Config
 from forms import LoginForm
 
@@ -11,6 +11,10 @@ app.config.from_object(Config)
 
 
 @app.route("/")
+def reRouteHome():
+    return redirect("/home")
+
+@app.route("/home")
 def index():
     user = {"username": "Carl",
             "age": "32"
@@ -30,9 +34,12 @@ def index():
     return render_template("siteFace.html", title="Home", user=user, posts=posts)
 
 
-@app.route("/login")
+@app.route("/login", methods=["GET", "POST"])
 def login():
     form = LoginForm()
+    if form.validate_on_submit():
+        flash(f"Login request for user {form.username.data}, remember_me = {form.remember_me.data}, password = {form.password.data}")
+        return redirect("/home")
     return render_template("login.html", title="log in", form=form)
 
 
